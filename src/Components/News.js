@@ -9,10 +9,10 @@ import Spinner from './Spiner';
 export class News extends Component {
     static defaultProps = {
         country: 'in',
-        pageSize : 8,
-        category : 'science'
+        pageSize: 8,
+        category: 'science'
     }
-    
+
     // static PropTypes = {
     //     country: PropTypes.string,
     //     pageSize : PropTypes.number
@@ -45,14 +45,14 @@ export class News extends Component {
 
     async componentDidMount() {
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=153e324c9b5847f58a17aae8fe1569a2&page=1&pageSize=${this.props.pageSize}`;
-        this.setState({loading:true})
+        this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
         this.setState({
             articles: parsedData.articles,
             totalResults: parsedData.totalResults,
-            loading:false
+            loading: false
         })
     }
 
@@ -62,13 +62,13 @@ export class News extends Component {
         })
         console.log(this.state.page)
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=153e324c9b5847f58a17aae8fe1569a2&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-        this.setState({loading:true})
+        this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({
             articles: parsedData.articles,
             totalResults: parsedData.totalResults,
-            loading:false
+            loading: false
         })
     }
 
@@ -78,14 +78,14 @@ export class News extends Component {
         })
         console.log(this.state.page)
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=153e324c9b5847f58a17aae8fe1569a2&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
-        this.setState({loading:true})
+        this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
         this.setState({
             articles: parsedData.articles,
             totalResults: parsedData.totalResults,
-            loading:false
+            loading: false
         })
 
     }
@@ -99,7 +99,7 @@ export class News extends Component {
                     {/* When loading is not true , data will be shown */}
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-3" key={element.url}>
-                            <NewsItem title={element.title} description={element.description ? element.description.slice(0, 88) + "..." : " "} imgUrl={element.urlToImage} newsId={element.url}></NewsItem>
+                            <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imgUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                         </div>
                     })}
                 </div>
