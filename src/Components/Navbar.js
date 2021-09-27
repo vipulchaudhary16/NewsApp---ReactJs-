@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-
 // rcep
 export class Navbar extends Component {
   static propTypes = {
@@ -21,22 +20,22 @@ export class Navbar extends Component {
                   <Link className="nav-link active text-white" aria-current="page" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/business">business</Link>
+                  <Link className="nav-link text-white" to="/business">Business</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/entertainment">entertainment</Link>
+                  <Link className="nav-link text-white" to="/entertainment">Entertainment</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/health">health</Link>
+                  <Link className="nav-link text-white" to="/health">Health</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/science">science</Link>
+                  <Link className="nav-link text-white" to="/science">Science</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/technology">technology</Link>
+                  <Link className="nav-link text-white" to="/technology">Technology</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link text-white" to="/sports">sports</Link>
+                  <Link className="nav-link text-white" to="/sports">Sports</Link>
                 </li>
               </ul>
             </div>
