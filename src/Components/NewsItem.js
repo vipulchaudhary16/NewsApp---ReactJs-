@@ -1,37 +1,40 @@
 import React, { Component } from "react";
-
 import logoDef from "../Logo.png";
+import '../App.css';
 
 export class NewsItem extends Component {
     render() {
-        let { title, description, imgUrl, newsId, author, date, source } =
+        let { title, description, imgUrl, newsUrl, author, date, source } =
             this.props;
         return (
             <div className="my-3">
-                <div className="card bg-dark text-white border border-white">
-                    <img
-                        style={{ height: "210px" }}
-                        src={imgUrl ? imgUrl : logoDef}
-                        className="card-img-top"
-                        alt="Can't Load This photo🤔"
-                    />
-                    <span
-                        class="position-absolute top-0 translate-middle badge rounded-pill bg-light text-dark"
-                        style={{ left: "90%", zIndex: "1" }}
-                    >
-                        {" "}
-                        {source}
-                    </span>
-                    <div className="card-body">
-                        <h6 className="card-title">{title}</h6>
-                        <p className="card-text">{description}</p>
-                        <p className="card-text">
-                            <small className="text-muted">
-                                By {!author ? "Unknown" : author} on{" "}
-                                {new Date(date).toGMTString()}
-                            </small>
-                        </p>
-                        <a href={newsId} target="blank" className="btn btn-sm btn-primary">
+                <div className="bg-dark text-white border border-white">
+                    <div className="d-flex justify-content-end position-absolute ">
+                        <span className="badge bg-light text-dark">{source}</span>
+                    </div>
+                    <div className="img-div">
+                        <img
+                            style={{ height: "210px" }}
+                            src={imgUrl ? imgUrl : logoDef}
+                            className="card-img-top"
+                            alt="Can't Load This photo🤔"
+                        />
+                    </div>
+
+                    <div className="container box">
+                        <h5 className="title">{title}</h5>
+                        <div className="desc-div">
+                            <p className="description">{description}</p>
+                        </div>
+                        <div className="author-txt">
+                            <p className="">
+                                <small className="text-muted">
+                                    By {!author ? "Unknown" : author} on{" "}
+                                    {new Date(date).toGMTString()}
+                                </small>
+                            </p>
+                        </div>
+                        <a href={newsUrl} target="blank" className="btn btn-sm btn-primary">
                             Read more
                         </a>
                     </div>
