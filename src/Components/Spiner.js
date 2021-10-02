@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import loading from "../spinner.gif";
+import loading from "../spinner3.gif";
 
 export default class Spiner extends Component {
     render() {

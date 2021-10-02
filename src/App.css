@@ -2,20 +2,18 @@
   margin: 0;
   padding: 0;
 }
-
 /* NewsItem CSS */
 .img-div{
   height: 210px;
   margin-bottom: 10px;
 }
-
-.box{
-  height: 415px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.img-div img{
+  height: 210px;
 }
 
+.box{
+  height: auto;
+}
 .title{
   font-size: 20px;
 }
@@ -23,7 +21,6 @@
   font-size: 15px;
   text-align:left;
 }
-
 .desc-div{
   height: auto;
   overflow: hidden;
