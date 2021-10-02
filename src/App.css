@@ -10,7 +10,7 @@
 }
 
 .box{
-  height: 415px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

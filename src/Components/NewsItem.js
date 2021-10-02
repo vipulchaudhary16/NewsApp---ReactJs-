@@ -8,7 +8,7 @@ export class NewsItem extends Component {
             this.props;
         return (
             <div className="my-3">
-                <div className="bg-dark text-white border border-white">
+                <div className="card bg-dark text-white border border-white">
                     <div className="d-flex justify-content-end position-absolute ">
                         <span className="badge bg-light text-dark">{source}</span>
                     </div>
@@ -17,11 +17,11 @@ export class NewsItem extends Component {
                             style={{ height: "210px" }}
                             src={imgUrl ? imgUrl : logoDef}
                             className="card-img-top"
-                            alt="Can't Load This photo🤔"
+                            alt="🤔"
                         />
                     </div>
 
-                    <div className="container box">
+                    <div className="card-body">
                         <h5 className="title">{title}</h5>
                         <div className="desc-div">
                             <p className="description">{description}</p>
